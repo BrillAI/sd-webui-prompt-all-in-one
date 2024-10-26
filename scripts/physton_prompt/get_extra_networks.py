@@ -39,7 +39,7 @@ def get_extra_networks():
                 # 获取civitai.info
                 item['civitai_info'] = {}
                 try:
-                    if 'filename' in item and item['filename']:
+                    if 'filename' in item and item.get('filename', ""):
                         item['basename'] = os.path.basename(item['filename'])
                         item['dirname'] = os.path.dirname(item['filename'])
                         base, ext = os.path.splitext(item['filename'])
